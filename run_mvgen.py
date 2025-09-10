@@ -310,7 +310,7 @@ if __name__ == '__main__':
     print("Get camera traj...")
     if args.cond_num > 1:
         # you can put the path to a local checkpoint in model_name if needed
-        dust3r = AsymmetricCroCo3DStereo.from_pretrained("./check_points/DUSt3R_ViTLarge_BaseDecoder_512_dpt.pth").to(device)
+        dust3r = AsymmetricCroCo3DStereo.from_pretrained("submodules/mvgenmaster/check_points/DUSt3R_ViTLarge_BaseDecoder_512_dpt.pth").to(device)
         dust3r_images = load_images(input_files, size=512, square_ok=True)
         pairs = make_pairs(dust3r_images, scene_graph='complete', prefilter=None, symmetrize=True)
         output = inference(pairs, dust3r, device, batch_size=1)
