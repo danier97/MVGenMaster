@@ -1,4 +1,4 @@
-from my_diffusers.schedulers import DDPMScheduler, DDIMScheduler, DPMSolverMultistepScheduler, EulerDiscreteScheduler, UniPCMultistepScheduler
+from submodules.mvgenmaster.my_diffusers.schedulers import DDPMScheduler, DDIMScheduler, DPMSolverMultistepScheduler, EulerDiscreteScheduler, UniPCMultistepScheduler
 
 class_dict = {"DDPM": DDPMScheduler,
               "DDIM": DDIMScheduler,

@@ -2,7 +2,7 @@ import einops
 import torch
 import torch.nn.functional as F
 
-from src.modules.position_encoding import freq_encoding
+from .position_encoding import freq_encoding
 
 
 @torch.cuda.amp.autocast(enabled=False)

@@ -867,7 +867,7 @@ class ModelMixin(torch.nn.Module, PushToHubMixin):
 
         ### model_cfg setting ###
         if model_cfg is not None:
-            from src.modules.extra_encoder import (ExConvEncoder, ExConvEncoder2, ExConvEncoder3,
+            from ...src.modules.extra_encoder import (ExConvEncoder, ExConvEncoder2, ExConvEncoder3,
                                                    CoordEncoder, CoordCrossEncoder, ExConvEncoder4)
             additional_in_channels = model_cfg.get("additional_in_channels", 0)
             if type(additional_in_channels) == omegaconf.listconfig.ListConfig:
@@ -922,7 +922,7 @@ class ModelMixin(torch.nn.Module, PushToHubMixin):
             # set ROPE
             model.use_rope = model_cfg.get("use_rope", False)
             if model.use_rope:
-                from src.modules.position_encoding import StableDiffusionRoPE
+                from ...src.modules.position_encoding import StableDiffusionRoPE
                 rope_layers = dict()
                 for n, p in model.named_parameters():
                     if ".attn1.to_q" in n:

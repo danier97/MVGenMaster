@@ -38,8 +38,8 @@ from ...utils.torch_utils import randn_tensor
 from ..pipeline_utils import DiffusionPipeline, StableDiffusionMixin
 from .pipeline_output import StableDiffusionPipelineOutput
 from .safety_checker import StableDiffusionSafetyChecker
-from src.modules.camera import get_camera_embedding
-from src.modules.position_encoding import global_position_encoding_3d, get_3d_priors
+from ....src.modules.camera import get_camera_embedding
+from ....src.modules.position_encoding import global_position_encoding_3d, get_3d_priors
 
 logger = logging.get_logger(__name__)  # pylint: disable=invalid-name
 

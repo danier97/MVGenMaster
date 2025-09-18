@@ -416,7 +416,7 @@ def _load_empty_model(
         and issubclass(class_obj, PreTrainedModel)
         and transformers_version >= version.parse("4.20.0")
     )
-    diffusers_module = importlib.import_module(__name__.split(".")[0])
+    diffusers_module = importlib.import_module('submodules.mvgenmaster.my_diffusers')
     is_diffusers_model = issubclass(class_obj, diffusers_module.ModelMixin)
 
     model = None
@@ -645,7 +645,7 @@ def load_sub_model(
     load_method = getattr(class_obj, load_method_name)
 
     # add kwargs to loading method
-    diffusers_module = importlib.import_module(__name__.split(".")[0])
+    diffusers_module = importlib.import_module('submodules.mvgenmaster.my_diffusers')
     loading_kwargs = {}
     if issubclass(class_obj, torch.nn.Module):
         loading_kwargs["torch_dtype"] = torch_dtype
@@ -726,7 +726,7 @@ def load_sub_model(
 
 def _fetch_class_library_tuple(module):
     # import it here to avoid circular import
-    diffusers_module = importlib.import_module(__name__.split(".")[0])
+    diffusers_module = importlib.import_module('submodules.mvgenmaster.my_diffusers')
     pipelines = getattr(diffusers_module, "pipelines")
 
     # register the config from the original module, not the dynamo compiled one
